@@ -2,9 +2,29 @@ package MERAbank;
 
 import Adt.ATM;
 
+import java.util.Scanner;
+
 public class MeraAtm implements ATM {
     private int Pin = 1234;
     private double AccountBalance = 0000;
+    Scanner sc = new Scanner(System.in);
+
+    @Override
+    public void ChangePin(int atmpin, int newPin) {
+        if (verifyPin(atmpin)) {
+            System.out.println("Enter New Pin Again");
+            int pin2 = sc.nextInt();
+            if (newPin == pin2) {
+                this.Pin = pin2;
+                System.out.println("PIN Changed");
+            }
+            return;
+        } else {
+            System.out.println("Wrong PIN");
+            return;
+
+        }
+    }
 
     @Override
     public double deposit(double amount) {

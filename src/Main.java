@@ -9,12 +9,12 @@ public class Main {
             int i = 0;
             Scanner sc = new Scanner(System.in);
             MeraAtm obj = new MeraAtm();
-            System.out.println("Please Enter Your PIN");
-            int pin = sc.nextInt();
-            if (obj.verifyPin(pin)) {
-            } else return;
             do {
-                System.out.println("SHOW Balance -- 1\t Deposit money ----2\t Withdraw Money -----3\t");
+                System.out.println("Please Enter Your PIN");
+                int pin = sc.nextInt();
+                if (obj.verifyPin(pin)) {
+                } else return;
+                System.out.println("SHOW Balance -- 1\t Deposit money ----2\t Withdraw Money -----3\t Change PIN----4");
                 int temp = sc.nextInt();
                 switch (temp) {
                     case 1:
@@ -29,6 +29,10 @@ public class Main {
                         System.out.println("Enter amount to be Withdrawn");
                         double amot = sc.nextDouble();
                         obj.withdraw(amot);
+                        break;
+                    case 4:
+                        int newpin = sc.nextInt();
+                        obj.ChangePin(pin, newpin);
                         break;
                     default:
                         System.out.println("Invaild Option");

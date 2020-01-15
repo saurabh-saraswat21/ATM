@@ -9,4 +9,6 @@ public interface ATM {
 
     public abstract boolean verifyPin(int atmPin);
 
+    public abstract void ChangePin(int atmpin, int newPin);
+
 }
