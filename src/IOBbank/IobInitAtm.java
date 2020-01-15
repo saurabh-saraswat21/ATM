@@ -2,7 +2,7 @@ package IOBbank;
 
 import Adt.ATM;
 
-public class IOBatm implements ATM {
+public class IobInitAtm implements ATM {
     @Override
     public double deposit(double amount) {
         return 0;
