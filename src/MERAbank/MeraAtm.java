@@ -23,10 +23,15 @@ public class MeraAtm implements ATM {
     @Override
     public double withdraw(double amount) {
         if (AccountBalance > amount) {
-            this.AccountBalance = AccountBalance - amount;
-            System.out.println("Rs." + amount + " WithDrawn");
-            System.out.println("Updated Account Balance is" + AccountBalance);
-            return 0;
+            if (amount >= 0) {
+                this.AccountBalance = AccountBalance - amount;
+                System.out.println("Rs." + amount + " WithDrawn");
+                System.out.println("Updated Account Balance is" + AccountBalance);
+                return 0;
+            } else {
+                System.out.println("Amount Cannot be less than 0");
+                return 0;
+            }
         } else {
             System.out.println("Not Enough Balance");
             return 0;
